@@ -43,7 +43,7 @@ module.exports = function (sandbox, fn, options) {
     $.ajax({
         url: '/apis/v/vehicles/' + options.id,
         headers: {
-            'x-host': 'auto.serandives.com:4000'
+            'x-host': 'auto.serandives.com:4004'
         },
         dataType: 'json',
         success: function (data) {
