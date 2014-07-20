@@ -63,7 +63,7 @@ module.exports = function (sandbox, fn, options) {
                     return;
                 }
                 fn(false, function () {
-                    sandbox.remove('.auto-details');
+                    $('.auto-details', sandbox).remove();
                 });
             });
         },
