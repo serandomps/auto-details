@@ -16,7 +16,7 @@ var list = function (el, options, paging, fn) {
                 el.on('click', '.auto-sort .btn', function () {
                     var sort = $(this).attr('name');
                     var serand = require('serand');
-                    serand.emit('auto', 'sort', { sort: sort});
+                    serand.emit('auto', 'sort', {sort: sort});
                     list(options, {
                         sort: sort
                     });
@@ -54,7 +54,7 @@ module.exports = function (sandbox, fn, options) {
                 sandbox.on('click', '.auto-sort .btn', function () {
                     var sort = $(this).attr('name');
                     var serand = require('serand');
-                    serand.emit('auto', 'sort', { sort: sort});
+                    serand.emit('auto', 'sort', {sort: sort});
                     list(options, {
                         sort: sort
                     });
@@ -75,6 +75,6 @@ module.exports = function (sandbox, fn, options) {
     });
 };
 
-serand.on('user', 'login', function (usr) {
+serand.on('user', 'logged in', function (usr) {
     user = usr;
 });
