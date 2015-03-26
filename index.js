@@ -1,6 +1,7 @@
 var dust = require('dust')();
 var serand = require('serand');
 var utils = require('autos-utils');
+var gallery = require('gallery');
 
 var user;
 
