@@ -1,7 +1,8 @@
 var dust = require('dust')();
 var serand = require('serand');
 var utils = require('autos-utils');
-var gallery = require('gallery');
+
+require('gallery');
 
 var user;
 
@@ -20,8 +21,16 @@ module.exports = function (sandbox, fn, options) {
                 if (!fn) {
                     return;
                 }
-                fn(false, function () {
-                    $('.auto-details', sandbox).remove();
+                fn(false, {
+                    clean: function () {
+                        $('.auto-details', sandbox).remove();
+                    },
+                    done: function () {
+                        blueimp.Gallery(data.photos, {
+                            container: $('.blueimp-gallery-carousel', sandbox),
+                            carousel: true
+                        });
+                    }
                 });
             });
         },
