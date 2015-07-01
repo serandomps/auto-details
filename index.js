@@ -16,7 +16,7 @@ module.exports = function (sandbox, fn, options) {
         },
         dataType: 'json',
         success: function (data) {
-            dust.render('auto-details', utils.cdn(data), function (err, out) {
+            dust.render('auto-details', utils.cdn800x450(data), function (err, out) {
                 sandbox.append(out);
                 if (!fn) {
                     return;
@@ -26,7 +26,16 @@ module.exports = function (sandbox, fn, options) {
                         $('.auto-details', sandbox).remove();
                     },
                     done: function () {
-                        blueimp.Gallery(data.photos, {
+                        var i;
+                        var o = [];
+                        var photos = data.photos;
+                        var length = photos.length;
+                        var photo;
+                        for (i = 0; i < length; i++) {
+                            photo = photos[i];
+                            o.push(photo.url);
+                        }
+                        blueimp.Gallery(o, {
                             container: $('.blueimp-gallery-carousel', sandbox),
                             carousel: true
                         });
