@@ -51,6 +51,14 @@ module.exports = function (sandbox, fn, options) {
     });
 };
 
+serand.on('user', 'ready', function (usr) {
+    user = usr;
+});
+
 serand.on('user', 'logged in', function (usr) {
     user = usr;
+});
+
+serand.on('user', 'logged out', function (usr) {
+    user = null;
 });
