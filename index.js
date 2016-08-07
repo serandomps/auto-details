@@ -10,10 +10,7 @@ dust.loadSource(dust.compile(require('./template'), 'auto-details'));
 
 module.exports = function (sandbox, fn, options) {
     $.ajax({
-        url: '/apis/v/vehicles/' + options.id,
-        headers: {
-            'X-Host': 'autos.serandives.com'
-        },
+        url: 'https://autos.serandives.com/apis/v/vehicles/' + options.id,
         dataType: 'json',
         success: function (data) {
             dust.render('auto-details', utils.cdn800x450(data), function (err, out) {
