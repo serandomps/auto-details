@@ -1,6 +1,7 @@
 var dust = require('dust')();
 var serand = require('serand');
-var utils = require('autos-utils');
+var autils = require('autos-utils');
+var utils = require('utils');
 
 require('gallery');
 
@@ -10,10 +11,10 @@ dust.loadSource(dust.compile(require('./template'), 'auto-details'));
 
 module.exports = function (sandbox, fn, options) {
     $.ajax({
-        url: 'https://autos.serandives.com/apis/v/vehicles/' + options.id,
+        url: utils.resolve('autos://apis/v/vehicles/' + options.id),
         dataType: 'json',
         success: function (data) {
-            dust.render('auto-details', utils.cdn800x450(data), function (err, out) {
+            dust.render('auto-details', autils.cdn800x450(data), function (err, out) {
                 sandbox.append(out);
                 if (!fn) {
                     return;
