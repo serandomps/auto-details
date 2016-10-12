@@ -10,7 +10,7 @@
         "serandomps/dust": "master",
         "serandomps/serand": "master",
         "serandomps/utils": "master",
-        "serandomps/autos-utils": "master",
+        "serandomps/vehicle-service": "master",
         "serandomps/gallery": "master"
     }
 }
