@@ -1,3 +1,9 @@
 .autos-details .blueimp-gallery-carousel {
     margin-top: 0;
 }
+
+.autos-details .blueimp-gallery > .indicator > li {
+    width: 40px;
+    height: 40px;
+}
+

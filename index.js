@@ -31,11 +31,16 @@ module.exports = function (sandbox, fn, options) {
                     var photo;
                     for (i = 0; i < length; i++) {
                         photo = photos[i];
-                        o.push(photo.url);
+                        o.push({
+                            href: photo.url,
+                            thumbnail: 'https://farm6.static.flickr.com/5587/30453547284_436620c829_b.jpg'
+                        });
                     }
                     blueimp.Gallery(o, {
                         container: $('.blueimp-gallery-carousel', sandbox),
-                        carousel: true
+                        carousel: true,
+                        thumbnailIndicators: true,
+                        stretchImages: true
                     });
                 }
             });
