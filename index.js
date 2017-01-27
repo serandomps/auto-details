@@ -1,27 +1,27 @@
 var dust = require('dust')();
 var serand = require('serand');
 var utils = require('utils');
-var Vehicle = require('vehicle-service');
+var Vehicle = require('vehicles-service');
 
 require('gallery');
 
 var user;
 
-dust.loadSource(dust.compile(require('./template'), 'autos-details'));
+dust.loadSource(dust.compile(require('./template'), 'vehicles-details'));
 
 module.exports = function (sandbox, fn, options) {
     Vehicle.findOne({id: options.id, images: '800x450'}, function (err, vehicle) {
         if (err) {
             return fn(true, serand.none);
         }
-        dust.render('autos-details', vehicle, function (err, out) {
+        dust.render('vehicles-details', vehicle, function (err, out) {
             sandbox.append(out);
             if (!fn) {
                 return fn(true, serand.none);
             }
             fn(false, {
                 clean: function () {
-                    $('.autos-details', sandbox).remove();
+                    $('.vehicles-details', sandbox).remove();
                 },
                 done: function () {
                     var i;
