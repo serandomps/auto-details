@@ -14,6 +14,13 @@ module.exports = function (sandbox, fn, options) {
         if (err) {
             return fn(true, serand.none);
         }
+        if (user.id === vehicle.user) {
+            vehicle._ = {
+                edit: true
+            }
+        }
+        console.log(user)
+        console.log(vehicle)
         dust.render('vehicles-findone', vehicle, function (err, out) {
             sandbox.append(out);
             if (!fn) {
