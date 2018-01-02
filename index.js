@@ -40,7 +40,7 @@ module.exports = function (sandbox, fn, options) {
                         photo = photos[i];
                         o.push({
                             href: photo.url,
-                            thumbnail: 'https://farm6.static.flickr.com/5587/30453547284_436620c829_b.jpg'
+                            thumbnail: photo.url
                         });
                     }
                     blueimp.Gallery(o, {
