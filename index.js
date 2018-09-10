@@ -15,9 +15,7 @@ module.exports = function (sandbox, options, done) {
             return done(err);
         }
         if (user.id === vehicle.user) {
-            vehicle._ = {
-                edit: true
-            }
+            vehicle._.edit = true;
         }
         console.log(user)
         console.log(vehicle)
@@ -33,7 +31,7 @@ module.exports = function (sandbox, options, done) {
                 ready: function () {
                     var i;
                     var o = [];
-                    var photos = vehicle.photos;
+                    var photos = vehicle._.photos;
                     var length = photos.length;
                     var photo;
                     for (i = 0; i < length; i++) {
