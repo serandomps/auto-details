@@ -31,14 +31,14 @@ module.exports = function (ctx, sandbox, options, done) {
                 ready: function () {
                     var i;
                     var o = [];
-                    var photos = vehicle._.photos;
-                    var length = photos.length;
-                    var photo;
+                    var images = vehicle._.images;
+                    var length = images.length;
+                    var image;
                     for (i = 0; i < length; i++) {
-                        photo = photos[i];
+                        image = images[i];
                         o.push({
-                            href: photo.url,
-                            thumbnail: photo.url
+                            href: image.url,
+                            thumbnail: image.url
                         });
                     }
                     blueimp.Gallery(o, {
