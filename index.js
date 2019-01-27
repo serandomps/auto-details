@@ -18,8 +18,6 @@ module.exports = function (ctx, container, options, done) {
         if (user.id === vehicle.user) {
             vehicle._.edit = true;
         }
-        console.log(user)
-        console.log(vehicle)
         dust.render('vehicles-findone', vehicle, function (err, out) {
             if (err) {
                 return done(err);
