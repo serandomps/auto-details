@@ -1,4 +1,10 @@
 <div class="vehicles-findone">
+    {?_.edit}
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/vehicles/{id}/edit" class="btn btn-success edit">Edit</a>
+        <a href="/vehicles/{id}/delete" class="btn btn-danger delete">Delete</a>
+    </div>
+    {/_.edit}
     <div class="row">
         <div class="col-md-6">
             <div class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
@@ -35,7 +41,7 @@
                 </tr>
                 <tr>
                     <td>Mileage</td>
-                    <td>{mileage}</td>
+                    <td>{mileage} km</td>
                 </tr>
                 <tr>
                     <td>Transmission</td>
@@ -43,7 +49,7 @@
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td>{price}</td>
+                    <td>{price} LKR</td>
                 </tr>
                 <tr>
                     <td>Description</td>
@@ -53,12 +59,4 @@
             </table>
         </div>
     </div>
-    {?_.edit}
-    <div class="row">
-        <div class="col-md-12">
-            <a href="/vehicles/{id}/edit" class="btn btn-success edit">Edit</a>
-            <a href="/vehicles/{id}/delete" class="btn btn-danger delete">Delete</a>
-        </div>
-    </div>
-    {/_.edit}
 </div>
