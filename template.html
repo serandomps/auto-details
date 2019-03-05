@@ -1,10 +1,18 @@
 <div class="vehicles-findone">
-    {?_.edit}
-    <div class="d-flex justify-content-end mb-3">
-        <a href="/vehicles/{id}/edit" class="btn btn-success edit">Edit</a>
-        <a href="/vehicles/{id}/delete" class="btn btn-danger delete">Delete</a>
+    <div class="row mb-3">
+        <!--<div class="col-md-2"></div>-->
+        <div class="col-md-10">
+            <h1 class="title text-center">{?id}{_.make.title} {_.model.title} {manufacturedAt|year}{:else}Create your vehicle{/id}</h1>
+        </div>
+        <div class="col-md-2">
+            {?_.edit}
+            <div class="d-flex justify-content-end mt-1">
+                <a href="/vehicles/{id}/edit" class="btn btn-success edit">Edit</a>
+                <a href="/vehicles/{id}/delete" class="btn btn-danger delete">Delete</a>
+            </div>
+            {/_.edit}
+        </div>
     </div>
-    {/_.edit}
     <div class="row">
         <div class="col-md-6">
             <div class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
@@ -51,9 +59,19 @@
                     <td>Price</td>
                     <td>{price} LKR</td>
                 </tr>
+                {?description}
                 <tr>
                     <td>Description</td>
                     <td>{description}</td>
+                </tr>
+                {/description}
+                <tr>
+                    <td>Contacts</td>
+                    <td>
+                        <div class="phones"></div>
+                        <div class="email">{contacts.email}</div>
+                        <div class="email">{contacts.email}</div>
+                    </td>
                 </tr>
                 </tbody>
             </table>
