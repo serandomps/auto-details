@@ -68,9 +68,49 @@
                 <tr>
                     <td>Contacts</td>
                     <td>
-                        <div class="phones"></div>
-                        <div class="email">{contacts.email}</div>
-                        <div class="email">{contacts.email}</div>
+                        {?_.contact.phones}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1"><i class="fas fa-phone"></i></div>
+                            {#_.contact.phones}
+                            <div class="p-1">{.}</div>
+                            {/_.contact.phones}
+                        </div>
+                        {/_.contact.phones}
+                        {?_.contact.email}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1">
+                                <i class="fas fa-envelope mr-2"></i>{_.contact.email}
+                            </div>
+                        </div>
+                        {/_.contact.email}
+                        {?_.contact.viber}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1">
+                                <i class="fab fa-viber mr-2"></i>{_.contact.viber}
+                            </div>
+                        </div>
+                        {/_.contact.viber}
+                        {?_.contact.whatsapp}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1">
+                                <i class="fab fa-whatsapp mr-2"></i>{_.contact.whatsapp}
+                            </div>
+                        </div>
+                        {/_.contact.whatsapp}
+                        {?_.contact.messenger}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1">
+                                <i class="fab fa-facebook-messenger mr-2"></i>{_.contact.messenger}
+                            </div>
+                        </div>
+                        {/_.contact.messenger}
+                        {?_.contact.skype}
+                        <div class="d-flex justify-content-start">
+                            <div class="p-1">
+                                <i class="fab fa-skype mr-2"></i>{_.contact.skype}
+                            </div>
+                        </div>
+                        {/_.contact.skype}
                     </td>
                 </tr>
                 </tbody>
