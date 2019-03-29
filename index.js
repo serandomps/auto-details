@@ -45,10 +45,20 @@ module.exports = function (ctx, container, options, done) {
         }
         async.parallel({
             location: function (found) {
-                findLocation(vehicle.location, found);
+                findLocation(vehicle.location, function (err, location) {
+                    if (err) {
+                        console.error(err);
+                    }
+                    found(null, location);
+                });
             },
             contact: function (found) {
-                findContact(vehicle.contact, found)
+                findContact(vehicle.contact, function (err, contact) {
+                    if (err) {
+                        console.error(err);
+                    }
+                    found(null, contact);
+                })
             }
         }, function (err, o) {
             if (err) {
