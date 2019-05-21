@@ -63,12 +63,6 @@
                     <td>Price</td>
                     <td>{price} LKR</td>
                 </tr>
-                {?description}
-                <tr>
-                    <td>Description</td>
-                    <td>{description}</td>
-                </tr>
-                {/description}
                 {?_.contact}
                 <tr>
                     <td>Contacts</td>
@@ -119,6 +113,12 @@
                     </td>
                 </tr>
                 {/_.contact}
+                {?description}
+                <tr>
+                    <td>Description</td>
+                    <td>{description|s}</td>
+                </tr>
+                {/description}
                 </tbody>
             </table>
         </div>
